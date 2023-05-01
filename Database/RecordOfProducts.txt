@@ -1,0 +1,1 @@
+product{inventoryNumber=6102, Description='ERHTRJYHGR', price=44.0, quantity=7665, location='GFDFGFF'}

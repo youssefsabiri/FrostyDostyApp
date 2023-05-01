@@ -1,0 +1,70 @@
+Hot Chocolate$24
+Cacao Oreo$38
+Steamed Milk$12
+Viennese Chocolate$34
+Affogato$24
+Vanilla Cream$32
+White Hot Chocolate$30
+Cappuccino Mochaccino$26
+Mrshmellow Hot Chocolate$38
+Blue Lagoon Small Size$38
+Blue Lagoon Medium Size$42
+Blue Lagoon Large Size$44
+Non Virgin Mojito Small Size$38
+Non Virgin Mojito Medium Size$42
+Non Virgin Mojito Large Size$44
+Pina Colada Small Size$36
+Pina Colada Medium Size$40
+Pina Colada Large Size$42
+Virgin Mojito Small Size$34
+Virgin Mojito Medium Size$38
+Virgin Mojito Large Size$40
+Painkiller$44
+Croque Monsieur$35
+Croque Madame$38
+Egg&Cheese Bagel$35
+Cheese Bagel$30
+Nutella Waffle$35
+Frosty Waffle$25
+Chocolate Ripped$55
+Vanilla Shredded$55
+Iced Mocha Coffee$34
+Iced Americano$26
+Frosty Frappuccino$38
+Iced Tea$18
+Iced Caramel Macchiato$18
+Strawberry Pie Small Size$38
+Strawberry Pie Medium Size$42
+Strawberry Pie Large Size$44
+Oreo Shake Small Size$38
+Oreo Shake Medium Size$42
+Oreo Shake Large Size$44
+Vanilla Shake Small Size$36
+Vanilla Shake Medium Size$40
+Vanilla Shake Large Size$42
+Strawberry Smoothie Small Size$35
+Strawberry Smoothie Medium Size$37
+Strawberry Smoothie Large Size$39
+Mango Smoothie Small Size$35
+Mango Smoothie Medium Size$37
+Mango Smoothie Large Size$39
+Pistachio Milk Smoothie Small Size$38
+Pistachio Milk Smoothie Medium Size$42
+Pistachio Milk Smoothie Large Size$44
+Cookies Shake Smoothie Small Size$38
+Cookies Shake Smoothie Medium Size$42
+Cookies Shake Smoothie Large Size$44
+Iced Peach Tea$18
+Iced Matcha Tea$35
+Iced Red Tea$18
+Iced Matcha Latte$45
+Matcha Green Tea$24
+Royal English Tea$24
+Moroccan Tea$18
+Black Tea (with fruit pieces)$24
+Green Tea (flavoured)$24
+Strawberry Bubble Tea$55
+Blueberry Bubble Tea$55
+Peach Bubble Tea$65
+Passion Fruit Bubble Tea$65
+Blue Bubbles Tea$65
