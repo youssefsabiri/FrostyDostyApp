@@ -2,6 +2,9 @@ package BusinessIntelligence;
 
 import UserInterface.AdminGUI;
 import UserInterface.ClientHomeGUI;
+import UserInterface.LoginHomeGUI;
+import Database.ClientCRUD;
+import RemoteInterface.Main;
 
 import javax.swing.*;
 
@@ -14,27 +17,38 @@ public class Login {
 
 
 
-	public void Authenticate(String email, String password, Client cl) {
-        account a = Main.accounts.search(email);
-        if (email.equals("R.fadili@gmail.com")) {
+	public void Authenticate(String email, String password) {
+		if (email.equals("R.fadili@gmail.com")) {
             if (password.equals("Admin123"))
                 showAdminGUI();
             else {
                 JOptionPane.showMessageDialog(null, "Password Incorrect", "Error", JOptionPane.ERROR_MESSAGE);
-                showLoginHomeGUI(parentFrame, cl);
             }
-        } else if (a.login.equals("not found")) {
-            JOptionPane.showMessageDialog(null, "User Not Found!", "Error", JOptionPane.ERROR_MESSAGE);
-            showLoginHomeGUI(parentFrame, cl);
-        } else if (email.equals(a.login) && password.equals(a.getPassword()))
-            showClientHomeGUI(cl);
-        else {
-            JOptionPane.showMessageDialog(null, "Password Incorrect", "Error", JOptionPane.ERROR_MESSAGE);
-            showLoginHomeGUI(parentFrame, cl);
+		}
+		
+        String a = ClientCRUD.search(email);
+        
+        if (!a.equals("Not found")){ 
+        	String[] credentials = a.split(",");
+        	String password_found = credentials[1];
+        	int clientID = Integer.parseInt(credentials[2]);
+        	if (password.equals(password_found)) {
+            	Main.clientID=clientID;
+                showClientHomeGUI();
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "Password Incorrect", "Error", JOptionPane.ERROR_MESSAGE);
+                showLoginHomeGUI(parentFrame);
+            }
         }
+        
+        else{
+            JOptionPane.showMessageDialog(null, "User Not Found!", "Error", JOptionPane.ERROR_MESSAGE);
+            showLoginHomeGUI(parentFrame);
+        } 
     }
 
-    // Other methods remain the same
+    
 
     private static void showAdminGUI() {
         AdminGUI adminGUI = new AdminGUI();
@@ -45,8 +59,9 @@ public class Login {
         adminFrame.setVisible(true);
     }
 
-    private static void showClientHomeGUI(Client cl) {
-        ClientHomeGUI clientGUI = new ClientHomeGUI(cl, Main.orders);
+    private static void showClientHomeGUI() {
+    	System.out.println("ClientID is :  " + Main.clientID);
+        ClientHomeGUI clientGUI = new ClientHomeGUI();
         JFrame clientFrame = new JFrame("Client Home GUI");
         clientFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         clientFrame.setSize(800, 600);
@@ -54,8 +69,8 @@ public class Login {
         clientFrame.setVisible(true);
     }
 
-    private static void showLoginHomeGUI(JFrame parentFrame, Client cl) {
-        LoginHomeGUI loginHomeGUI = new LoginHomeGUI(cl);
+    private static void showLoginHomeGUI(JFrame parentFrame) {
+        LoginHomeGUI loginHomeGUI = new LoginHomeGUI();
         parentFrame.getContentPane().removeAll();
         parentFrame.getContentPane().add(loginHomeGUI);
         parentFrame.revalidate();

@@ -1,18 +1,23 @@
 package BusinessIntelligence;
-import Database.transactionlist;
+
+import RemoteInterface.Main;
 
 public class CalculateExpenses {
-    public double Expenses(transactionlist transactions){
-     double a=0;
-            for (Transaction i : transactions.transactions) {
-                if (i.amount<0) {
-                    a= i.amount+a;
-                }
-            }
-            double expense = a;
+	
+	public static double calcul() {
+		double expenses=0;
+		for (Transaction trans: Main.transactions) {
+			if (trans.description.equals("Employee Salary") || trans.description.equals("Supplier Payment")){
+				double amount2 = Double.parseDouble(trans.amount);
+				expenses=expenses+amount2;
+			}
+			}
+		
+		return expenses;
+		}
+	
+	}
+    
+ 
 
 
-        return expense;
-    }
-
-}

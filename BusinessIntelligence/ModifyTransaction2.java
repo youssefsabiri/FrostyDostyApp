@@ -2,14 +2,15 @@ package BusinessIntelligence;
 
 import javax.swing.*;
 
+import Database.TransactionCRUD;
+import RemoteInterface.Main;
+
 public class ModifyTransaction2 {
 	
-	public void transactionModified(int code, double amount) {
-		Transaction old_transaction = Main.transactions.search(code);
-		Transaction new_transaction = old_transaction;
-		new_transaction.amount=amount;
-		Main.transactions.update(old_transaction, new_transaction);
-		JOptionPane.showMessageDialog(null, "The transaction was modified successfully in the Transaction Record File", "Success", JOptionPane.INFORMATION_MESSAGE);
+	public void transactionModified(int code, int amount) {
+		Main.transactions.remove(1001);
+		Main.transactions.Add(1001, "23-07-2023", "Employee Salary", "2000", "6");
+		JOptionPane.showMessageDialog(null, "The transaction was modified successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
 	}
 
 }

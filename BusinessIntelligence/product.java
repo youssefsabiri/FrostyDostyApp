@@ -2,30 +2,24 @@ package BusinessIntelligence;
 
 public class product {
     public int inventoryNumber;
-    public String Description;
+    public String name;
     public double price;
-    public int quantity;
+    public double quantity;
+    public double min;
     public String location;
 
 
-    public product(int inventoryNumber, String description, double price, int quantity, String location) {
+    public product(int inventoryNumber, String name, double price, double quantity, double min,String location) {
         this.inventoryNumber = inventoryNumber;
-        Description = description;
+        this.name = name;
         this.price = price;
         this.quantity = quantity;
+        this.min=min;
         this.location = location;
     }
 
-    @Override
-    public String toString() {
-        return "product{" +
-                "inventoryNumber=" + inventoryNumber +
-                ", Description='" + Description + '\'' +
-                ", price=" + price +
-                ", quantity=" + quantity +
-                ", location='" + location + '\'' +
-                '}';
-    }
+  
+	
 
 
 }

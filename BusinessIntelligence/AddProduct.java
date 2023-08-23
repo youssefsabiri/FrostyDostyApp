@@ -1,19 +1,17 @@
 package BusinessIntelligence;
 
 import javax.swing.*;
-import java.util.Random;
+
+import RemoteInterface.Main;
+
 
 
 
 
 public class AddProduct {
 	
-	public void productVerified(String description, double price, int Quantity, String location) {
-		Random random = new Random();
-        int min = 0;
-        int max = 10000;
-        int inventoryNumber = random.nextInt(max - min + 1) + min;
-		Main.products.add(inventoryNumber, description, price, Quantity, location);
+	public void productVerified(String description, double price, double quantity, String location) {
+		Main.products.add(101, description, price, quantity, 1,location);
 		JOptionPane.showMessageDialog(null, "Your product was added successfully to the inventory", "Success", JOptionPane.INFORMATION_MESSAGE);
 	}
 

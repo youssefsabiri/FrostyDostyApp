@@ -4,6 +4,8 @@ import UserInterface.LoginGUI;
 
 import javax.swing.*;
 
+import Database.ClientCRUD;
+
 
 
 
@@ -12,12 +14,21 @@ public class Signup {
     
     
 	public void signup(String fullname, String phonenumber, String address, String email, String password) {
-		Main.accounts.Add(email, password);
-		account acc = new account(email, password);
-		Client cl = new Client(fullname, phonenumber, address, acc);
-		Main.clients.Add(fullname, phonenumber, address, acc);
-		//Login login = new Login(this.parentFrame);
-		//login.Authenticate(email, password, accounts);
+		String[] credentials = fullname.split(" ");
+    	String first_name = credentials[0]; 
+    	String middle_name = credentials[1];
+    	String last_name = credentials[2];
+    	
+    	String[] address_details = address.split(",");
+    	String street = address_details[0]; 
+    	String city = address_details[1];
+    	
+		
+    	ClientCRUD.create(first_name, middle_name, last_name, phonenumber, city, street, email, password);
+		
+		
+		account acc = new account("khawi", "khawi");
+		Client cl = new Client("khawi", "khawi", "khawi", acc);
 		showLoginGUI(cl);
 				
 	}

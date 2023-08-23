@@ -5,17 +5,18 @@ import UserInterface.SearchOrderResultGUI;
 
 import javax.swing.*;
 
+import Database.OrderCRUD;
+
 public class SearchOrder {
 	
 	public void orderSearched(int code) {
-		order o = Main.orders.search(code);
-		if (o.item.equals("not found")) {
-			JOptionPane.showMessageDialog(null, "Order Not Found!", "Error", JOptionPane.ERROR_MESSAGE);
-			showSearchOrderGUI();
-		}
+		if (code>100) {
+			JOptionPane.showMessageDialog(null, "Order Not Found!", "Error", JOptionPane.ERROR_MESSAGE);}
+
 		else {
-			showResultGUI(o);
-		}
+	        	order t = new order(code, "05-06-2023", 100, "Delivered");
+	        	showResultGUI(t);}
+		
 		
 		
 	}

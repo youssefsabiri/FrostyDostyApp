@@ -4,26 +4,21 @@ package BusinessIntelligence;
 
 public class order {
     public int orderCode;
-    public String item;
+    public double amount;
     public String transaction_date;
-    public int quantity;
+    public String status;
 
-    public order(int orderCode, String transaction_date, String item, int quantity) {
-        this.orderCode = orderCode;
-        this.transaction_date = transaction_date;
-        this.item = item;
-        this.quantity = quantity;
-    }
+    
+    public order(int orderCode, String transaction_date, double amount, String status) {
+		super();
+		this.orderCode = orderCode;
+		this.amount = amount;
+		this.transaction_date = transaction_date;
+		this.status = status;
+	}
 
-    @Override
-    public String toString() {
-        return "BusinessIntelligence.order{" +
-                "orderCode='" + orderCode + '\'' +
-                ", item='" + item + '\'' +
-                ", transaction_date=" + transaction_date +
-                ", quantity=" + quantity +
-                '}';
-    }
+
+	
 }
 
     

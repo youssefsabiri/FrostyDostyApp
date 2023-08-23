@@ -1,19 +1,24 @@
 package BusinessIntelligence;
-import Database.transactionlist;
+
+import RemoteInterface.Main;
 
 public class CalculateRevenues {
+	
+	public static double calcul() {
+		double revenues=0;
+		for (Transaction trans: Main.transactions) {
+			if (trans.description.equals("Client Payment")){
+				double amount2 = Double.parseDouble(trans.amount);
+				revenues=revenues+amount2;
+			}
+			}
+		
+		return revenues;
+		}
 
-    public double Revenues(transactionlist transactions ){
-        double a=0;
-        for (Transaction i : transactions.transactions) {
-            if (i.amount>0) {
-                a= i.amount+a;
-            }
-        }
-        double revenue = a;
+	
+	}
+    
+ 
 
 
-        return revenue;
-    }
-
-}

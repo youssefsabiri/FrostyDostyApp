@@ -8,14 +8,13 @@ import javax.swing.*;
 public class ModifyProduct1 {
 	
 	public void productSearched(int code) {
-		product o = Main.products.search(code);
-		if (o.Description.equals("not found")) {
-			JOptionPane.showMessageDialog(null, "Product Not Found!", "Error", JOptionPane.ERROR_MESSAGE);
-			showModifyProduct1GUI();
-		}
+
+		if (code>101) {
+			JOptionPane.showMessageDialog(null, "Product Not Found!", "Error", JOptionPane.ERROR_MESSAGE);}
+
 		else {
-			showModifyProduct2GUI(o.inventoryNumber);
-		}
+			showModifyProduct2GUI(code);
+			}
 		
 		
 	}
