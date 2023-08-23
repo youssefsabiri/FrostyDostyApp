@@ -21,7 +21,7 @@ public class ClientList {
 		public void Add(String fullname, String phonenumber, String address, account account){
             Client ac = new Client(fullname ,phonenumber, address, account);
             clients.add(ac);
-            WriteToClientsFile.write(clients);
+
         }
         
 
@@ -30,7 +30,7 @@ public class ClientList {
             for(Client i: clients ){
                 if(i.fullname.equals(fullname)){
                 	clients.remove(i);
-                	WriteToClientsFile.write(clients);
+
                 	return;
                 }
             }
@@ -70,7 +70,7 @@ public class ClientList {
             for (Client i : clients) {
                 if (i.account.equals(oldclient.account)) {
                     i=newclient;
-                    WriteToClientsFile.write(clients);
+
                     return ;
                 }
             }

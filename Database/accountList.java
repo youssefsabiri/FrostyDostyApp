@@ -21,14 +21,14 @@ public class accountList {
 		public void Add(String email, String password){
             account ac = new account(email ,password);
             accounts.add(ac);
-            WriteToAccountsFile.write(accounts);
+
         }
         
         public void remove(String login){
             for(account i: accounts ){
                 if(i.login.equals(login)){
                     accounts.remove(i);
-                    WriteToAccountsFile.write(accounts);
+
                     return;
                 }
             }
@@ -78,7 +78,7 @@ public class accountList {
         for (account i : accounts) {
             if (i.login.equals(oldacc.login)) {
                 i=newacc;
-                WriteToAccountsFile.write(accounts);
+
                 return ;
             }
         }
